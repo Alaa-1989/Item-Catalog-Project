@@ -1,0 +1,26 @@
+<div id="header">
+<header class="header">
+  <h1 class="titlehome">Novels Catalog</h1>
+   <p>A website created by me.</p>
+</header>
+</div>
+<nav class="navbar navbar-expand-md navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+    <ul class="navbar-nav mr-auto">
+      <li><a href="{{url_for('showCategories')}}">Home</a></li>
+      <li><a href="{{url_for('showAbout')}}">About</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+					{%if 'username' not in session %}
+      <li><a href="{{url_for('showLogin')}}"> Login</a></li>
+			{% else %}
+      <li><a href="{{url_for('disconnect')}}">Logout</a></li>
+			{% endif %}
+    </ul>
+  </div>
+</div>
+</nav>
+
+<script src="../static/titlehome.js"></script>
+<script src="../../static/titlehome.js"></script>

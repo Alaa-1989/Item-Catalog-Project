@@ -1,0 +1,76 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+{% include "footer.html" %}
+
+
+
+<div class="flash">
+
+		      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+
+        <ul>
+        {% for message in messages %}
+            <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+</div>
+
+
+<div class="container-fluid text-center">
+	<div class="row content">
+		<div class="col-sm-2 sidenav">
+      {% for categories in catalogs %}
+          <a href = "{{url_for('showItemes', categories_id = categories.id)}}">
+               <p>{{categories.name}}</p>
+          </a>
+		  {% endfor %}
+		</div>
+
+		<div class="col-sm-8 text-left">
+			<br>
+			<br>
+        <h1>Last Items Added</h1>
+          {% for categories in addedLast %}
+              <a href = "{{url_for('showItemes', categories_id = categories.id, addedLast = addedLast)}}">
+						    	<p>{{categories.name}}</p>
+              </a>
+          {% endfor %}
+		</div>
+
+		<div class="col-sm-2 sidenav">
+				<a href="#">
+						<button class="btn btn-default" id="new-categories">
+						<span aria-hidden="true"></span>link
+						</button>
+				</a>
+				<a href="#">
+						<button class="btn btn-default" id="new-categories">
+						<span aria-hidden="true"></span>link
+						</button>
+				</a>
+				<a href="#">
+						<button class="btn btn-default" id="new-categories">
+						<span aria-hidden="true"></span>link
+						</button>
+				</a>
+				<a href="#">
+						<button class="btn btn-default" id="new-categories">
+						<span aria-hidden="true"></span>link
+						</button>
+				</a>
+				<a href="#">
+						<button class="btn btn-default" id="new-categories">
+						<span aria-hidden="true"></span>link
+						</button>
+				</a>
+
+		</div>
+
+
+  </div>
+</div>
+{% endblock %}

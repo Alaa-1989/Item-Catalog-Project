@@ -1,0 +1,156 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+{% include "footer.html" %}
+
+	<div class="row divider">
+		<div class="col-md-12"></div>
+	</div>
+	<div class="row banner menu">
+		<div class="col-md-11 col-md-offset-1 padding-none">
+			<h1>{{ categories.name }}
+			<figure class="creator">
+				<img src="{{ creator.picture}}">
+				<figcaption>{{ creator.name }}</figcaption>
+			</figure>
+			</h1>
+
+		</div>
+	</div>
+	<div class="row padding-top padding-bottom">
+		<div class="col-md-1"></div>
+		<div class="col-md-11 padding-none">
+
+		</div>
+		<div class="col-md-7"></div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					<ul>
+						{% for message in messages %}
+							 <li> <strong> {{ message }} </strong> </li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+			{% endwith %}
+		</div>
+	</div>
+
+
+	{% if itemsMenu !=[] %}
+	<div class="row">
+	  <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+	      <div class="caption">
+	        <h3>Mysteries</h3>
+	        {% for i in itemsMenu %}
+	          {% if i.novelType == 'Mysteries' %}
+	          <div class="menu-item">
+							<img src="i.novelPicture" alt="novel pic">
+	            <h3>{{i.name}}</h3>
+	            <p><strong>{{i.author}}</strong></p>
+	            <p>{{i.description}}</p>
+	            <p class="menu-price">{{i.price}}</p>
+	          </div>
+	          {% endif %}
+	        {% endfor %}
+	      </div>
+	    </div>
+	  </div>
+	  <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+	      <div class="caption">
+	        <h3>Romance</h3>
+	        {% for i in itemsMenu %}
+	          {% if i.novelType == 'Romance' %}
+	          <div class="menu-item">
+	            <img src="i.novelPicture" alt="novel pic">
+	            <h3>{{i.name}}</h3>
+	            <p><strong>{{i.author}}</strong></p>
+	            <p>{{i.description}}</p>
+	            <p class="menu-price">{{i.price}}</p>
+	          </div>
+	          {% endif %}
+	        {% endfor %}
+	      </div>
+	    </div>
+	  </div>
+	  <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+	      <div class="caption">
+	        <h3>Thrillers</h3>
+	        {% for i in itemsMenu %}
+	          {% if i.novelType == 'Thrillers' %}
+	          <div class="menu-item">
+						  <img src="i.novelPicture" alt="novel pic">
+	            <h3>{{i.name}}</h3>
+	            <p><strong>{{i.author}}</strong></p>
+	            <p>{{i.description}}</p>
+	            <p class="menu-price">{{i.price}}</p>
+	          </div>
+	          {% endif %}
+	        {% endfor %}
+	      </div>
+	    </div>
+	  </div>
+	  <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+	      <div class="caption">
+	        <h3>Science Fiction</h3>
+	        {% for i in itemsMenu %}
+	          {% if i.novelType == 'Science Fiction' %}
+	          <div class="menu-item">
+							<img src="i.novelPicture" alt="novel pic">
+	            <h3>{{i.name}}</h3>
+	            <p><strong>{{i.author}}</strong></p>
+	            <p>{{i.description}}</p>
+	            <p class="menu-price">{{i.price}}</p>
+	          </div>
+	          {% endif %}
+	        {% endfor %}
+	      </div>
+	    </div>
+	  </div>
+	  <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+	      <div class="caption">
+	        <h3>Fantasy</h3>
+	        {% for i in itemsMenu %}
+	          {% if i.novelType == 'Fantasy' %}
+	          <div class="menu-item">
+							<img src="i.novelPicture" alt="novel pic">
+	            <h3>{{i.name}}</h3>
+	            <p><strong>{{i.author}}</strong></p>
+	            <p>{{i.description}}</p>
+	            <p class="menu-price">{{i.price}}</p>
+	          </div>
+	          {% endif %}
+	        {% endfor %}
+	      </div>
+	    </div>
+	  </div>
+	  <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+	      <div class="caption">
+	        <h3>Historical Fiction</h3>
+	        {% for i in itemsMenu %}
+	          {% if i.novelType == 'Historical Fiction' %}
+	          <div class="menu-item">
+							<img src="i.novelPicture" alt="novel pic">
+	            <h3>{{i.name}}</h3>
+	            <p><strong>{{i.author}}</strong></p>
+	            <p>{{i.description}}</p>
+	            <p class="menu-price">{{i.price}}</p>
+	          </div>
+	          {% endif %}
+	        {% endfor %}
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	{% endif %}
+
+{% endblock %}
