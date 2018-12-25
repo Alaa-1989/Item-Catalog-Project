@@ -54,7 +54,7 @@ class Items(Base):
     novelType = Column(String(250))
     novelPicture = Column(String(250))
     categories_id = Column(Integer, ForeignKey('categories.id'))
-    categories = relationship("NovelsCategories", cascade="delete")
+    categories = relationship(NovelsCategories)
     user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship(User)
 
