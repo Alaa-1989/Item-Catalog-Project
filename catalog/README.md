@@ -10,15 +10,15 @@ the web app is a catalog to show categories and it's items. with some of the CRU
 
 
 ## Requirements Install
-Python 3.7.1
-vagrant 2.2.0
-VirtualBox
-Git bash - for Windows OS
-pycodestyle-2.4.0
-Flask
-oauth2client
-jsonify
-requests
+- Python 3.7.1
+- vagrant 2.2.0
+- VirtualBox
+- Git bash - for Windows OS
+- pycodestyle-2.4.0
+- Flask
+- oauth2client
+- jsonify
+- requests
 
 ## How to Run
 - Clone this repo:
@@ -112,7 +112,7 @@ There is a Three endpoints in this project, you can view it in your browser by e
 - JSON APIs to view Specific Category by id with its items Information by item id path:
 `localhost:8000/categories/<int:categories_id>/menu/<int:menu_id>/JSON`
 
-#### catalogsJSON**
+#### catalogsJSON
 - JSON APIs to view all categories with their id path:
 `localhost:8000/categories/JSON`
 
