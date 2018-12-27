@@ -328,7 +328,7 @@ def newItemes(categories_id):
     if 'username' not in login_session:
         return redirect('/login')
     categories = session.query(NovelsCategories).filter_by(
-    id=categories_id).one()
+                 id=categories_id).one()
     if login_session['user_id'] != categories.user_id:
         return '''<script>function myFunction() {alert('You are not authorized
          to add items to this catagories. Please create your own catagories in
@@ -349,8 +349,7 @@ def newItemes(categories_id):
         return render_template('newItemes.html', categories_id=categories_id)
 
 
-
-# Edit item
+# Edit Item
 @app.route('/categories/<int:categories_id>/menu/<int:menu_id>/edit',
            methods=['GET', 'POST'])
 def editItem(categories_id, menu_id):
