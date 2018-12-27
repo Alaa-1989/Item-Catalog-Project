@@ -1,6 +1,7 @@
 from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
+from sqlalchemy.orm import backref
 from sqlalchemy import create_engine
 
 Base = declarative_base()
@@ -54,7 +55,9 @@ class Items(Base):
     novelType = Column(String(250))
     novelPicture = Column(String(250))
     categories_id = Column(Integer, ForeignKey('categories.id'))
-    categories = relationship(NovelsCategories)
+    categories = relationship("NovelsCategories",
+                         backref=backref("items",cascade="all, delete-orphan")
+                    )
     user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship(User)
 
