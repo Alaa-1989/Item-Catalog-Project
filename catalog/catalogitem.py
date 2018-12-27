@@ -422,7 +422,7 @@ def disconnect():
         return redirect(url_for('showCategories'))
     else:
         flash("You were not logged in")
-        return redirect(url_for('showCategories')
+        return redirect(url_for('showCategories'))
 
 
 if __name__ == '__main__':
