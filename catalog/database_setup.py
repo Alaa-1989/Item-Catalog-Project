@@ -75,7 +75,8 @@ class Items(Base):
             'novelPicture': self.novelPicture,
             'categories_id': self.categories_id,
             'user_id': self.user_id,
-        }
+            }
+
 
 
 engine = create_engine('sqlite:///novelscategories.db')
