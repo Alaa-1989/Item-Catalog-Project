@@ -40,7 +40,7 @@ $ git clone https://github.com/Alaa-1989/Item-Catalog-Project.git
 `python seeder.py`
 
 - For run the web app write this command in same direct.
-`python catalogitem.py`
+`python __init__.py`
 
 - Then Open http://localhost:8000 from your browser.
 
@@ -54,7 +54,7 @@ Page implements a third-party authentication & authorization service, we impleme
 - Select Create Credentials > OAuth Client ID
 - Select Web application
 - Enter name **Item Catalog** or any name you want
-- If you change the name you need to change it in **catalogitem.py** line 20 , `APPLICATION_NAME = "Item Catalog"`
+- If you change the name you need to change it in **__init__.py** line 20 , `APPLICATION_NAME = "Item Catalog"`
 - Select the app then In Authorized JavaScript origins add:
 http://localhost:8000
 - Select Authorized redirect URIs and add:
@@ -76,7 +76,7 @@ Run this code to install pycodestyle.
 
 
 - `cd` to catalog file and run this command to Checked your code.
-`pycodestyle catalogitem.py`
+`pycodestyle __init__.py`
 
 
 ## Snapshot
